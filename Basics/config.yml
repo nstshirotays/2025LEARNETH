@@ -1,20 +1,20 @@
 --- 
 id: basics
-name: Basics of Remix
+name: 01 Remix基礎
 summary: A typical workflow in Remix
 level: 1
 tags: 
   - Remix
 steps:
-  - name: Intro to the Interface 
+  - name: 画面インターフェース 
     path: interface_introduction
-  - name: Intro to Workspaces 
+  - name: ワークスペース 
     path: workspaces
-  - name: Loading & Compiling
+  - name: ロード & コンパイル
     path: load_and_compile
-  - name: Deploying to the Remix VM
+  - name: Remix VM へのデプロイ
     path: deploy_to_the_remixvm
-  - name: Interacting with Functions
+  - name: デプロイ関数の操作
     path: interacting
-  - name: Deploying to Public Networks
+  - name: 外部ネットワークへのデプロイ
     path: deploy_injected

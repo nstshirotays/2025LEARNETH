@@ -1,7 +1,16 @@
 --- 
 id: recorder
-name: Recorder
+name: 05 Remixレコーダー機能
 summary: Save a set of actions and replay and replay and replay
 level: 2
 tags: 
   - Remix
+steps:
+  - name: ユースケース
+    path: 1_Usecases
+  - name: 記録方法
+    path: 2_Record
+  - name: シナリオの編集
+    path: 3_Editing_a_Senario
+  - name: シナリオの実行
+    path: 4_Play

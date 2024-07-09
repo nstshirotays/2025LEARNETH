@@ -1,6 +1,6 @@
 ---
 id: multisigCourse
-name: Multisig Wallet
+name: 05 マルチシグ　ウォレット
 summary: Learn how to create and interact with a multisig wallet. Developed by the p2p learning platform https://dacade.org.
 level: 1
 tags:
@@ -8,13 +8,13 @@ tags:
   - Tokens
   - Multisig
 steps:
-  - name: 1. Introduction
+  - name: 1. 導入
     path: 1-multisig-introduction
 
-  - name: 2. Initialize the Contract
+  - name: 2. コントラクトの初期化
     path: 2-multisig-initialization
 
-  - name: 3. Deposits
+  - name: 3. Deposits；預け入れ
     path: 3-multisig-deposits
 
   - name: 4. Transactions

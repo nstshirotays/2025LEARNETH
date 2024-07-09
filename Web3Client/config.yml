@@ -1,9 +1,14 @@
 --- 
 id: useofweb3js
-name: Basic use of web3.js
+name: 03 web3.js 連携
 summary: This tutorial gives a short introduction of the web3.js library, querying the block number
 level: 2
 tags: 
   - JS
   - Remix
   - Web3
+steps:
+  - name: 1. Web3.jsの利用
+    path: 1_Using_Web3
+  - name: 2. 簡単なクエリ例
+    path: 2_Querying_a_Contract

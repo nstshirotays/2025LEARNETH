@@ -1,6 +1,6 @@
 ---
 id: uniswapSwapCourse
-name: Uniswap Swap Course
+name: 02 Uniswap
 summary: Go through the Solidity code of the Uniswap V3 Swap contract. Developed by the p2p learning platform https://dacade.org.
 level: 2
 tags:
@@ -8,17 +8,17 @@ tags:
   - Tokens
   - Uniswap
 steps:
-  - name: 1. Introduction
+  - name: 1. 導入
     path: 1-introduction-to-uniswap
 
-  - name: 2. Routers, Interfaces, and Structs
+  - name: 2. 概要と構成
     path: 2-router-interfaces-and-structs
 
-  - name: 3. Single Hop Swaps
+  - name: 3. シングルホップスワップ
     path: 3-single-hop-swaps
 
-  - name: 4. Multi-Hop Swaps
+  - name: 4. マルチホップスワップ
     path: 4-multi-hop-swaps
 
-  - name: 5. Erc20 and Weth Interfaces
+  - name: 5. ERC20トークンとラップイーサー
     path: 5-erc20-weth-interfaces
