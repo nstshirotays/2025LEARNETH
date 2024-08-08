@@ -2,29 +2,26 @@
 pragma solidity ^0.8.3;
 
 contract FunctionModifier {
-    // We will use these variables to demonstrate how to use
-    // modifiers.
+    // 修飾子の使い方を示すためにこれらの変数を使用します。
     address public owner;
     uint public x = 10;
     bool public locked;
 
     constructor() {
-        // Set the transaction sender as the owner of the contract.
+        // トランザクションの送信者をコントラクトの所有者として設定します。
         owner = msg.sender;
     }
 
-    // Modifier to check that the caller is the owner of
-    // the contract.
+    // コントラクトの呼び出し元が所有者であることを確認する修飾子。
     modifier onlyOwner() {
         require(msg.sender == owner, "Not owner");
-        // Underscore is a special character only used inside
-        // a function modifier and it tells Solidity to
-        // execute the rest of the code.
+        // アンダースコアは、関数修飾子内でのみ使用される特殊な文字で、
+        // Solidityに残りのコードを実行するよう指示します。
         _;
     }
 
-    // Modifiers can take inputs. This modifier checks that the
-    // address passed in is not the zero address.
+    // 修飾子は入力を取ることができます。この修飾子は、
+    // 渡されたアドレスがゼロアドレスでないことを確認します。
     modifier validAddress(address _addr) {
         require(_addr != address(0), "Not valid address");
         _;
@@ -34,9 +31,8 @@ contract FunctionModifier {
         owner = _newOwner;
     }
 
-    // Modifiers can be called before and / or after a function.
-    // This modifier prevents a function from being called while
-    // it is still executing.
+    // 修飾子は関数の前後に呼び出すことができます。
+    // この修飾子は、関数が実行中に再度呼び出されるのを防ぎます。
     modifier noReentrancy() {
         require(!locked, "No reentrancy");
 

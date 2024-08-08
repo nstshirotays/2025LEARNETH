@@ -10,12 +10,12 @@ contract DataLocations {
     mapping(uint => MyStruct) myStructs;
 
     function f() public {
-        // call _f with state variables
+        // 状態変数を使用して_fを呼び出す
         _f(arr, map, myStructs[1]);
 
-        // get a struct from a mapping
+        // マッピングから構造体を取得
         MyStruct storage myStruct = myStructs[1];
-        // create a struct in memory
+        // メモリに構造体を作成
         MyStruct memory myMemStruct = MyStruct(0);
     }
 
@@ -24,15 +24,15 @@ contract DataLocations {
         mapping(uint => address) storage _map,
         MyStruct storage _myStruct
     ) internal {
-        // do something with storage variables
+        // ストレージ変数を使用して何かを行う
     }
 
-    // You can return memory variables
+    // メモリ変数を返すことができます
     function g(uint[] memory _arr) public returns (uint[] memory) {
-        // do something with memory array
+        // メモリ配列で何かを行う
     }
 
     function h(uint[] calldata _arr) external {
-        // do something with calldata array
+        // calldata配列で何かを行う
     }
 }

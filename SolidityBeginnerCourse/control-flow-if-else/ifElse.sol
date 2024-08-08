@@ -18,7 +18,7 @@ contract IfElse {
         // }
         // return 2;
 
-        // shorthand way to write if / else statement
+        // 3項演算子を使って上記を1文で表現する　条件 ? 真の処理 : 偽の処理
         return _x < 10 ? 1 : 2;
     }
 }

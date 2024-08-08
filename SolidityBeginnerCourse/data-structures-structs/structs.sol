@@ -7,39 +7,39 @@ contract Todos {
         bool completed;
     }
 
-    // An array of 'Todo' structs
+    // 'Todo'構造体の配列
     Todo[] public todos;
 
     function create(string memory _text) public {
-        // 3 ways to initialize a struct
-        // - calling it like a function
+        // 構造体を初期化する3つの方法
+        // - 関数のように呼び出す
         todos.push(Todo(_text, false));
 
-        // key value mapping
+        // キーバリューマッピング
         todos.push(Todo({text: _text, completed: false}));
 
-        // initialize an empty struct and then update it
+        // 空の構造体を初期化してから更新
         Todo memory todo;
         todo.text = _text;
-        // todo.completed initialized to false
+        // todo.completedはfalseに初期化されます
 
         todos.push(todo);
     }
 
-    // Solidity automatically created a getter for 'todos' so
-    // you don't actually need this function.
+    // Solidityは'todos'のゲッターを自動的に作成するため、
+    // 実際にはこの関数は必要ありません。
     function get(uint _index) public view returns (string memory text, bool completed) {
         Todo storage todo = todos[_index];
         return (todo.text, todo.completed);
     }
 
-    // update text
+    // テキストを更新
     function update(uint _index, string memory _text) public {
         Todo storage todo = todos[_index];
         todo.text = _text;
     }
 
-    // update completed
+    // 完了状態を更新
     function toggleCompleted(uint _index) public {
         Todo storage todo = todos[_index];
         todo.completed = !todo.completed;

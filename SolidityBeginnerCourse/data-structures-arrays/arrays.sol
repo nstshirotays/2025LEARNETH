@@ -2,32 +2,31 @@
 pragma solidity ^0.8.3;
 
 contract Array {
-    // Several ways to initialize an array
+    // 配列を初期化するいくつかの方法
     uint[] public arr;
     uint[] public arr2 = [1, 2, 3];
-    // Fixed sized array, all elements initialize to 0
+    // 固定サイズの配列、すべての要素は0に初期化されます
     uint[10] public myFixedSizeArr;
 
     function get(uint i) public view returns (uint) {
         return arr[i];
     }
 
-    // Solidity can return the entire array.
-    // But this function should be avoided for
-    // arrays that can grow indefinitely in length.
+    // Solidityは全体の配列を返すことができます。
+    // しかし、この関数は無限に長くなる可能性がある配列には避けるべきです。
     function getArr() public view returns (uint[] memory) {
         return arr;
     }
 
     function push(uint i) public {
-        // Append to array
-        // This will increase the array length by 1.
+        // 配列に追加
+        // これにより配列の長さが1増えます。
         arr.push(i);
     }
 
     function pop() public {
-        // Remove last element from array
-        // This will decrease the array length by 1
+        // 配列の最後の要素を削除
+        // これにより配列の長さが1減ります。
         arr.pop();
     }
 
@@ -36,9 +35,9 @@ contract Array {
     }
 
     function remove(uint index) public {
-        // Delete does not change the array length.
-        // It resets the value at index to it's default value,
-        // in this case 0
+        // 削除は配列の長さを変更しません。
+        // インデックスの値をデフォルト値にリセットします、
+        // この場合は0です。
         delete arr[index];
     }
 }
@@ -46,13 +45,13 @@ contract Array {
 contract CompactArray {
     uint[] public arr;
 
-    // Deleting an element creates a gap in the array.
-    // One trick to keep the array compact is to
-    // move the last element into the place to delete.
+    // 要素を削除すると配列にギャップが生じます。
+    // 配列をコンパクトに保つ1つのトリックは、
+    // 削除する場所に最後の要素を移動することです。
     function remove(uint index) public {
-        // Move the last element into the place to delete
+        // 削除する場所に最後の要素を移動
         arr[index] = arr[arr.length - 1];
-        // Remove the last element
+        // 最後の要素を削除
         arr.pop();
     }
 

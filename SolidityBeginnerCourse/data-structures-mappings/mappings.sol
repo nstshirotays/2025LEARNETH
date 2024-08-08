@@ -2,33 +2,33 @@
 pragma solidity ^0.8.3;
 
 contract Mapping {
-    // Mapping from address to uint
+    // addressからuintへのマッピング
     mapping(address => uint) public myMap;
 
     function get(address _addr) public view returns (uint) {
-        // Mapping always returns a value.
-        // If the value was never set, it will return the default value.
+        // マッピングは常に値を返します。
+        // 値が設定されていない場合、デフォルト値を返します。
         return myMap[_addr];
     }
 
     function set(address _addr, uint _i) public {
-        // Update the value at this address
+        // このアドレスの値を更新
         myMap[_addr] = _i;
     }
 
     function remove(address _addr) public {
-        // Reset the value to the default value.
+        // 値をデフォルト値にリセット
         delete myMap[_addr];
     }
 }
 
 contract NestedMapping {
-    // Nested mapping (mapping from address to another mapping)
+    // ネストされたマッピング（アドレスから別のマッピングへのマッピング）
     mapping(address => mapping(uint => bool)) public nested;
 
     function get(address _addr1, uint _i) public view returns (bool) {
-        // You can get values from a nested mapping
-        // even when it is not initialized
+        // ネストされたマッピングから値を取得できます
+        // 初期化されていない場合でも
         return nested[_addr1][_i];
     }
 

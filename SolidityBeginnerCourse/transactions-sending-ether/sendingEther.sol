@@ -3,25 +3,25 @@ pragma solidity ^0.8.3;
 
 contract ReceiveEther {
     /*
-    Which function is called, fallback() or receive()?
+    どの関数が呼び出されるか、fallback()かreceive()か？
 
-           send Ether
+           Ether送信
                |
-         msg.data is empty?
-              / \
-            yes  no
-            /     \
-receive() exists?  fallback()
+         msg.dataは空か？
+              /      \
+            yes       no
+            /           \
+receive()は存在するか？  fallback()
          /   \
         yes   no
         /      \
     receive()   fallback()
     */
 
-    // Function to receive Ether. msg.data must be empty
+    // Etherを受け取るための関数。msg.dataは空でなければなりません
     receive() external payable {}
 
-    // Fallback function is called when msg.data is not empty
+    // msg.dataが空でない場合に呼び出されるフォールバック関数
     fallback() external payable {}
 
     function getBalance() public view returns (uint) {
@@ -31,20 +31,20 @@ receive() exists?  fallback()
 
 contract SendEther {
     function sendViaTransfer(address payable _to) public payable {
-        // This function is no longer recommended for sending Ether.
+        // この関数はEtherを送信するためには推奨されません。
         _to.transfer(msg.value);
     }
 
     function sendViaSend(address payable _to) public payable {
-        // Send returns a boolean value indicating success or failure.
-        // This function is not recommended for sending Ether.
+        // sendは成功または失敗を示すブール値を返します。
+        // この関数はEtherを送信するためには推奨されません。
         bool sent = _to.send(msg.value);
         require(sent, "Failed to send Ether");
     }
 
     function sendViaCall(address payable _to) public payable {
-        // Call returns a boolean value indicating success or failure.
-        // This is the current recommended method to use.
+        // callは成功または失敗を示すブール値を返します。
+        // これは現在推奨されている方法です。
         (bool sent, bytes memory data) = _to.call{value: msg.value}("");
         require(sent, "Failed to send Ether");
     }

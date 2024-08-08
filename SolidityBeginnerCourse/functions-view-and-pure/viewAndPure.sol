@@ -4,12 +4,12 @@ pragma solidity ^0.8.3;
 contract ViewAndPure {
     uint public x = 1;
 
-    // Promise not to modify the state.
+    // 状態を変更しないことを約束します。
     function addToX(uint y) public view returns (uint) {
         return x + y;
     }
 
-    // Promise not to modify or read from the state.
+    // 状態を変更せず、また状態から読み取らないことを約束します。
     function add(uint i, uint j) public pure returns (uint) {
         return i + j;
     }

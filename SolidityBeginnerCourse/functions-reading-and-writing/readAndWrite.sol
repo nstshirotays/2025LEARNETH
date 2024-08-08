@@ -2,15 +2,15 @@
 pragma solidity ^0.8.3;
 
 contract SimpleStorage {
-    // State variable to store a number
+    // 数値を保存するための状態変数
     uint public num;
 
-    // You need to send a transaction to write to a state variable.
+    // 状態変数に書き込むにはトランザクションを送信する必要があります。
     function set(uint _num) public {
         num = _num;
     }
 
-    // You can read from a state variable without sending a transaction.
+    // 状態変数から読み取るにはトランザクションを送信する必要はありません。
     function get() public view returns (uint) {
         return num;
     }

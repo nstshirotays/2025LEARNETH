@@ -18,9 +18,3 @@ Ethereumを動かすための*ガス*は、時々車を動かすためのガス�
 <a href="https://ethereum.org/en/developers/docs/gas/" target="_blank">ethereum.org</a>でガスについての詳細を学んでください。
 
 <a href="https://www.youtube.com/watch?v=oTS9uxU6cAM" target="_blank">ガスとガス価格に関するビデオチュートリアルを見る</a>。
-
-## ⭐️ 課題
-`Gas`コントラクトに`cost`という名前の新しい`public`なステート変数を`uint`型で作成します。コントラクトのデプロイにかかるガスコストの値を、新しい変数に格納します。
-
-ヒント: Remixのターミナルでトランザクションの詳細を確認でき、ガスコストも含まれています。Remixプラグイン*Gas Profiler*を使用して、トランザクションのガスコストを確認することもできます。
-

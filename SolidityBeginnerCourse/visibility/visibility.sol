@@ -2,9 +2,9 @@
 pragma solidity ^0.8.3;
 
 contract Base {
-    // Private function can only be called
-    // - inside this contract
-    // Contracts that inherit this contract cannot call this function.
+    // private関数は次の場所でのみ呼び出せます
+    // - このコントラクト内
+    // ※ このコントラクトを継承するコントラクトはこの関数を呼び出せません。
     function privateFunc() private pure returns (string memory) {
         return "private function called";
     }
@@ -13,9 +13,9 @@ contract Base {
         return privateFunc();
     }
 
-    // Internal function can be called
-    // - inside this contract
-    // - inside contracts that inherit this contract
+    // internal関数は次の場所で呼び出せます
+    // - このコントラクト内
+    // - このコントラクトを継承するコントラクト内
     function internalFunc() internal pure returns (string memory) {
         return "internal function called";
     }
@@ -24,42 +24,40 @@ contract Base {
         return internalFunc();
     }
 
-    // Public functions can be called
-    // - inside this contract
-    // - inside contracts that inherit this contract
-    // - by other contracts and accounts
+    // public関数は次の場所で呼び出せます
+    // - このコントラクト内
+    // - このコントラクトを継承するコントラクト内
+    // - 他のコントラクトおよびアカウントから
     function publicFunc() public pure returns (string memory) {
         return "public function called";
     }
 
-    // External functions can only be called
-    // - by other contracts and accounts
+    // external関数は次の場所でのみ呼び出せます
+    // - 他のコントラクトおよびアカウントから
     function externalFunc() external pure returns (string memory) {
         return "external function called";
     }
 
-    // This function will not compile since we're trying to call
-    // an external function here.
+    // この関数はコンパイルされません。ここでexternal関数を呼び出そうとしているためです。
     // function testExternalFunc() public pure returns (string memory) {
     //     return externalFunc();
     // }
 
-    // State variables
+    // ステート変数
     string private privateVar = "my private variable";
     string internal internalVar = "my internal variable";
     string public publicVar = "my public variable";
-    // State variables cannot be external so this code won't compile.
+    // ステート変数はexternalにすることはできないので、このコードはコンパイルされません。
     // string external externalVar = "my external variable";
 }
 
 contract Child is Base {
-    // Inherited contracts do not have access to private functions
-    // and state variables.
+    // 継承されたコントラクトはprivate関数とステート変数にアクセスできません。
     // function testPrivateFunc() public pure returns (string memory) {
     //     return privateFunc();
     // }
 
-    // Internal function call be called inside child contracts.
+    // internal関数は子コントラクト内で呼び出すことができます。
     function testInternalFunc() public pure override returns (string memory) {
         return internalFunc();
     }

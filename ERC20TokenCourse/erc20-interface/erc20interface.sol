@@ -4,61 +4,57 @@
 pragma solidity ^0.8.0;
 
 /**
- * @dev Interface of the ERC20 standard as defined in the EIP.
+ * @dev EIPで定義されたERC20標準のインターフェース。
  */
 interface IERC20 {
     /**
-     * @dev Returns the amount of tokens in existence.
+     * @dev 存在するトークンの総供給量を返します。
      */
     function totalSupply() external view returns (uint256);
 
     /**
-     * @dev Returns the amount of tokens owned by `account`.
+     * @dev `account`が所有するトークンの量を返します。
      */
     function balanceOf(address account) external view returns (uint256);
 
     /**
-     * @dev Moves `amount` tokens from the caller's account to `recipient`.
+     * @dev 呼び出し元のアカウントから`recipient`へ`amount`トークンを移動します。
      *
-     * Returns a boolean value indicating whether the operation succeeded.
+     * 操作が成功したかどうかを示すブール値を返します。
      *
-     * Emits a {Transfer} event.
+     * {Transfer} イベントを発行します。
      */
     function transfer(address recipient, uint256 amount) external returns (bool);
 
     /**
-     * @dev Returns the remaining number of tokens that `spender` will be
-     * allowed to spend on behalf of `owner` through {transferFrom}. This is
-     * zero by default.
+     * @dev `spender`が{transferFrom}を通じて所有者の代わりに使えるトークンの残りの数を返します。
+     * これはデフォルトではゼロです。
      *
-     * This value changes when {approve} or {transferFrom} are called.
+     * この値は{approve}や{transferFrom}が呼び出されると変わります。
      */
     function allowance(address owner, address spender) external view returns (uint256);
 
     /**
-     * @dev Sets `amount` as the allowance of `spender` over the caller's tokens.
+     * @dev 呼び出し元のトークンのうち`spender`の許容量を`amount`に設定します。
      *
-     * Returns a boolean value indicating whether the operation succeeded.
+     * 操作が成功したかどうかを示すブール値を返します。
      *
-     * IMPORTANT: Beware that changing an allowance with this method brings the risk
-     * that someone may use both the old and the new allowance by unfortunate
-     * transaction ordering. One possible solution to mitigate this race
-     * condition is to first reduce the spender's allowance to 0 and set the
-     * desired value afterwards:
+     * 重要: このメソッドで許容量を変更すると、古い許容量と新しい許容量が両方使用される可能性があるため、
+     * トランザクションの順序によるリスクが生じます。この競合状態を軽減するための一つの解決策は、
+     * 最初にspenderの許容量を0に減らし、その後に希望する値を設定することです:
      * https://github.com/ethereum/EIPs/issues/20#issuecomment-263524729
      *
-     * Emits an {Approval} event.
+     * {Approval} イベントを発行します。
      */
     function approve(address spender, uint256 amount) external returns (bool);
 
     /**
-     * @dev Moves `amount` tokens from `sender` to `recipient` using the
-     * allowance mechanism. `amount` is then deducted from the caller's
-     * allowance.
+     * @dev アローワンスメカニズムを使用して`sender`から`recipient`へ`amount`トークンを移動します。
+     * `amount`は呼び出し元のアローワンスから控除されます。
      *
-     * Returns a boolean value indicating whether the operation succeeded.
+     * 操作が成功したかどうかを示すブール値を返します。
      *
-     * Emits a {Transfer} event.
+     * {Transfer} イベントを発行します。
      */
     function transferFrom(
         address sender,
@@ -67,16 +63,15 @@ interface IERC20 {
     ) external returns (bool);
 
     /**
-     * @dev Emitted when `value` tokens are moved from one account (`from`) to
-     * another (`to`).
+     * @dev `value`トークンが一つのアカウント（`from`）から別のアカウント（`to`）へ移動されたときに発行されます。
      *
-     * Note that `value` may be zero.
+     * `value`がゼロである場合もあります。
      */
     event Transfer(address indexed from, address indexed to, uint256 value);
 
     /**
-     * @dev Emitted when the allowance of a `spender` for an `owner` is set by
-     * a call to {approve}. `value` is the new allowance.
+     * @dev {approve}の呼び出しによって`spender`のために所有者（`owner`）の許容量が設定されたときに発行されます。
+     * `value`は新しい許容量です。
      */
     event Approval(address indexed owner, address indexed spender, uint256 value);
 }

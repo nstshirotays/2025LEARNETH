@@ -2,16 +2,16 @@
 pragma solidity ^0.8.3;
 
 contract Variables {
-    // State variables are stored on the blockchain.
+    // 状態変数はブロックチェーンに保存されます。
     string public text = "Hello";
     uint public num = 123;
 
     function doSomething() public {
-        // Local variables are not saved to the blockchain.
+        // ローカル変数はブロックチェーンに保存されません。
         uint i = 456;
 
-        // Here are some global variables
-        uint timestamp = block.timestamp; // Current block timestamp
-        address sender = msg.sender; // address of the caller
+        // いくつかのグローバル変数
+        uint timestamp = block.timestamp; // 現在のブロックのタイムスタンプ
+        address sender = msg.sender; // 呼び出し元のアドレス
     }
 }

@@ -25,6 +25,6 @@ delete演算子を使用してキーに関連付けられた値を削除でき�
 <a href="https://www.youtube.com/watch?v=tO3vVMCOts8" target="_blank">マッピングのビデオチュートリアルを見る</a>。
 
 ## ⭐️ 課題
-1. キー型`address`と値型`uint`を関連付けるパブリックマッピング`balances`を作成します。
-2. `get`と`remove`関数を変更して、マッピング`balances`で動作するようにします。
-3. `set`関数を変更して、パラメータのアドレスをキーとして、そのアドレスに関連付けられたバランスを値として`balances`マッピングに新しいエントリを作成します。
+1. Mappingコントラクトに`address`型のキーと`uint`型のバリューを関連付けるpublicなマッピング`balances`を作成します。
+2. `get`と`remove`関数をマッピング`balances`で動作するように変更します。
+3. `set`関数を変更して、パラメータの_addrをキーとし、_addrの残高（`_addr.balance`）をバリューとした新しいエントリを作成してください。
