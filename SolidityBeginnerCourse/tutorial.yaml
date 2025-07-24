@@ -1,0 +1,10 @@
+---
+id: soliditybeginner
+name: 02 Solidity基礎
+summary: Solidity Beginner Course based on the popular https://solidity-by-example.org/ contracts. Developed by the p2p learning platform https://dacade.org.
+level: 1
+tags:
+  - Solidity
+steps:
+  - name: 2. 基本構文
+    path: basic-syntax
