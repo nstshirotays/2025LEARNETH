@@ -7,15 +7,15 @@ tags:
   - Solidity
 steps:
   - name: 1. 導入
-    path: 01.0-introduction
+    path: introduction
   - name: 2. 基本構文
-    path: 02.0-basic-syntax
+    path: basic-syntax
   - name: 3. 基本データ型
-    path: 03.0-primitive-data-types
+    path: primitive-data-types
   - name: 4. 変数
-    path: 04.0-variables
+    path: variables
   - name: 5.1 関数：ステート変数の読み書き
-    path: 05.1-functions-reading-and-writing
+    path: functions-reading-and-writing
   - name: 5.2 関数：ViewとPure
     path: functions-view-and-pure
   - name: 5.3 関数：修飾子とコンストラクタ
